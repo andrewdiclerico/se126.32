@@ -11,12 +11,9 @@
 #numberOfPeople     Number of people attending room
 #overLimit          number of people over the limit
 #underLimit         number of people that can also come before hitting the limit
+#answer             user decision
 
-#FUNCTIONS------------------------------------------------------------------
-
-#BASE PROGRAM CODE----------------------------------------------------------
-
-#initialize variables
+#initialize variables------------------------------------------------------
 maxCap = 0.0
 numberOfPeople = 0.0
 overLimit = 0.0
@@ -24,8 +21,20 @@ underLimit = 0.0
 answer = "y"
 
 
-if answer == "y":
+#FUNCTIONS------------------------------------------------------------------
+def message():
+    print("Would you like to enter another room? (Y/N)")
 
+def intro():
+    print("Welcome to the room capacity calculator")
+ 
+#BASE PROGRAM CODE----------------------------------------------------------
+
+intro()
+
+while answer == "y":
+
+    
     #getting max room cap
     print("What is the maximum capacity of the room?")
     maxCap = int(input())
@@ -56,7 +65,7 @@ if answer == "y":
         print(underLimit, "more people can attend before hitting max capacity")
     
     #asks if user wants to enter another room
-    print("Would you like to enter another room? (y/n)")
+    message()
 
     #users answer
     answer = input()
@@ -68,7 +77,7 @@ if answer == "y":
         #users answer
         answer = input()
         
-    print("noice")
+    print("")
 
 
 
