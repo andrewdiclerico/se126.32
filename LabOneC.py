@@ -14,20 +14,49 @@
 #answer             user decision
 
 #initialize variables------------------------------------------------------
-maxCap = 0.0
-numberOfPeople = 0.0
+maxCap = 0
+numberOfPeople = 0
 overLimit = 0.0
 underLimit = 0.0
 answer = "y"
+difference = 0
 
 
 #FUNCTIONS------------------------------------------------------------------
 def message():
     print("Would you like to enter another room? (Y/N)")
+    #users answer
+    answer = input()
+
+    #if answer is not valid re-ask question
+    while answer != "y" and answer != "Y" and answer != "N" and answer != "n":
+        print("Would you like to enter another room? (Please type 'y' or 'n')")
+
+        #users answer
+        answer = input()
+        return answer
+
+    
 
 def intro():
     print("Welcome to the room capacity calculator")
  
+def capacity():
+    print("What is the maximum capacity of the room?")
+    maxCap = int(input())
+    return maxCap
+    
+
+def attendees():
+    print("How many people will be attending?")
+    numberOfPeople = int(input())
+    
+    return numberOfPeople
+
+def register():
+    reg = capacity() - attendees() 
+    return reg
+
 #BASE PROGRAM CODE----------------------------------------------------------
 
 intro()
@@ -35,13 +64,10 @@ intro()
 while answer == "y":
 
     
-    #getting max room cap
-    print("What is the maximum capacity of the room?")
-    maxCap = int(input())
+    maxCap = capacity()
 
-    #getting the number of people attending
-    print("How many people will be attending?")
-    numberOfPeople = int(input())
+    numberOfPeople = attendees()
+
 
     #starting if statement
     if numberOfPeople > maxCap:
@@ -67,15 +93,16 @@ while answer == "y":
     #asks if user wants to enter another room
     message()
 
+    print(answer)
     #users answer
-    answer = input()
+    #answer = input()
 
     #if answer is not valid re-ask question
-    while answer != "y" and answer != "Y" and answer != "N" and answer != "n":
-        print("Would you like to enter another room? (Please type 'y' or 'n')")
+    #while answer != "y" and answer != "Y" and answer != "N" and answer != "n":
+        #print("Would you like to enter another room? (Please type 'y' or 'n')")
 
         #users answer
-        answer = input()
+        #answer = input()
         
     print("")
 
