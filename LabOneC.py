@@ -12,6 +12,7 @@
 #overLimit          number of people over the limit
 #underLimit         number of people that can also come before hitting the limit
 #answer             user decision
+#difference         difference between people attending and max capacity
 
 #initialize variables------------------------------------------------------
 maxCap = 0
@@ -19,7 +20,7 @@ numberOfPeople = 0
 overLimit = 0.0
 underLimit = 0.0
 answer = "y"
-difference = 0
+reg = 0
 
 
 #FUNCTIONS------------------------------------------------------------------
@@ -37,22 +38,24 @@ def message():
         return answer
 
     
-
+#intro function
 def intro():
     print("Welcome to the room capacity calculator")
  
+#getting max capacity of room
 def capacity():
     print("What is the maximum capacity of the room?")
     maxCap = int(input())
     return maxCap
     
-
+#getting the amount of people attending
 def attendees():
     print("How many people will be attending?")
     numberOfPeople = int(input())
     
     return numberOfPeople
 
+#calculating the difference from capacity and attendees
 def register():
     reg = capacity() - attendees() 
     return reg
@@ -93,18 +96,9 @@ while answer == "y":
     #asks if user wants to enter another room
     message()
 
-    print(answer)
-    #users answer
-    #answer = input()
 
-    #if answer is not valid re-ask question
-    #while answer != "y" and answer != "Y" and answer != "N" and answer != "n":
-        #print("Would you like to enter another room? (Please type 'y' or 'n')")
-
-        #users answer
-        #answer = input()
         
-    print("")
+    print("Thank for using my program!")
 
 
 

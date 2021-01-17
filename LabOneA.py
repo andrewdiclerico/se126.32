@@ -11,6 +11,7 @@
 #numberOfPeople     Number of people attending room
 #overLimit          number of people over the limit
 #underLimit         number of people that can also come before hitting the limit
+#answer             users input
 
 #FUNCTIONS------------------------------------------------------------------
 
